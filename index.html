@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebSocket Messenger</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #4A90E2;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .chat-log {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1;
+      overflow-y: auto;
+      white-space: pre-line;
+      margin-bottom: 1rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    input, button {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #4A90E2;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3B7AC8;
+    }
+  </style>
+</head>
+<body>
+  <header>WebSocket Messenger</header>
+  <main>
+    <div class="controls">
+      <input type="number" id="clientId" placeholder="Your ID (0–255)">
+      <button onclick="associate()">Associate</button>
+    </div>
+
+    <div class="controls">
+      <input type="number" id="receiverId" placeholder="Receiver ID (0–255)">
+      <input type="text" id="message" placeholder="Type your message">
+      <button onclick="sendMessage()">Send</button>
+      <button onclick="getMessage()">Get Msg</button>
+    </div>
+
+    <div id="output" class="chat-log"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
