@@ -20,7 +20,7 @@ function associate() {
 
   // If using local testing: ws://localhost:12345
   // If using tunnel or public server, use a valid `wss://` or `ws://` URL
-  ws = new WebSocket("wss://m3r31kmx-12345.inc1.devtunnels.ms"); // or your own server URL
+  ws = new WebSocket("wss://m3r31kmx-12345.inc1.devtunnels.ms/"); // or your own server URL
   ws.binaryType = "arraybuffer";
 
   ws.onopen = () => {
